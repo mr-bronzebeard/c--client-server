@@ -56,21 +56,6 @@ namespace server
 
                 XmlNodeList UsersNodes = document.SelectNodes("/DataBase/Users/User");
 
-                //foreach (XmlNode UserNode in UsersNodes)
-                //{
-                //    //читаем атрибуты
-                //    uint id = uint.Parse(UserNode.SelectSingleNode("ID").InnerText);
-                //    string login = UserNode.SelectSingleNode("LOGIN").InnerText;
-                //    string passHash = UserNode.SelectSingleNode("PASS_HASH").InnerText;
-
-                //    User item = new User(id, login, passHash);
-                //    Users.Add(item.Id, item);
-
-                //    if (item.Id > NextUserId)
-                //        NextUserId = item.Id++;
-                //}
-                //NextUserId++;
-
                 XmlNodeList HouseroomsNodes = document.SelectNodes("/DataBase/Houserooms/Houseroom");
 
                 foreach(XmlNode HouseroomNode in HouseroomsNodes)
@@ -110,29 +95,6 @@ namespace server
             document.AppendChild(root);
             document.InsertBefore(xmlDeclaration, root);
 
-            //XmlElement UsersNodes = document.CreateElement("Users");
-
-            //root.AppendChild(UsersNodes);
-
-            //foreach (var item in Users)
-            //{
-            //    XmlElement UserNode = document.CreateElement("User");
-
-            //    XmlElement XML_ID = document.CreateElement("ID");
-            //    XML_ID.InnerText = item.Value.Id.ToString();
-            //    UserNode.AppendChild(XML_ID);
-
-            //    XmlElement XML_Login = document.CreateElement("LOGIN");
-            //    XML_Login.InnerText = item.Value.Login;
-            //    UserNode.AppendChild(XML_Login);
-
-            //    XmlElement XML_Password = document.CreateElement("PASS_HASH");
-            //    XML_Password.InnerText = item.Value.Password;
-            //    UserNode.AppendChild(XML_Password);
-
-            //    UsersNodes.AppendChild(UserNode);
-            //}
-
             XmlElement HouseroomsNodes = document.CreateElement("Houserooms");
 
             root.AppendChild(HouseroomsNodes);
@@ -160,10 +122,6 @@ namespace server
                 XmlElement XML_DESCRIPTION = document.CreateElement("DESCRIPTION");
                 XML_DESCRIPTION.InnerText = item.Value.Description.ToString();
                 HouseroomNode.AppendChild(XML_DESCRIPTION);
-
-                //XmlElement XML_NumberOfRooms = document.CreateElement("NUMBER_OF_ROOMS");
-                //XML_NumberOfRooms.InnerText = item.Value.NumberOfRooms.ToString();
-                //HouseroomNode.AppendChild(XML_NumberOfRooms);
 
                 HouseroomsNodes.AppendChild(HouseroomNode);
             }
