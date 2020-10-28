@@ -210,16 +210,6 @@ namespace server
                                 decimal Price = Convert.ToDecimal(recvString(Client));
                                 string Description = recvString(Client);
 
-                                //if (cUserId < 0)
-                                //    sendDigit16((short)Answers.USER_NOT_LOGIN, Client);
-                                //else
-                                //{
-                                //    sendDigit16((short)Answers.COMMAND_OK, Client);
-
-                                //    Houseroom houseroom = new Houseroom(0, City, Street, Price, Description);
-                                //    DBManager.Inst().AddHouseroom(houseroom);
-                                //}
-
                                 sendDigit16((short)Answers.COMMAND_OK, Client);
 
                                 Houseroom houseroom = new Houseroom(0, City, Street, Price, Description);
