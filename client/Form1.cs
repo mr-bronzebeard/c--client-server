@@ -165,11 +165,6 @@ namespace client
             string price = textBoxAddPrice.Text;
             string description = textBoxAddDescription.Text;
 
-            //string city = "Check";
-            //string street = "Check";
-            //string price = "1005";
-            //string description = "Proverochka";
-
             int answer = mClient.addHouseroom(city, street, price, description);
 
             switch(answer)
